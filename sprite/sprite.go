@@ -37,11 +37,11 @@ func initializeEntities(em *entity.Manager, render *system.RenderSystem) {
 	// Load sprites from spritesheet
 	macawCrop := &sdl.Rect{0, 0, 200, 200}
 	sprite := objSpritesheet.LoadSprite(macawCrop)
-	obj := em.Create("macaw")
+	obj := em.Create()
 	obj.AddComponent("render", &sprite)
 	obj.AddComponent("position", &entity.PositionComponent{&sdl.Point{100, 100}})
 
-	camera := em.Create("camera")
+	camera := em.Create()
 	camera.AddComponent("position", &entity.PositionComponent{&sdl.Point{0, 0}})
 	camera.AddComponent("camera", &entity.CameraComponent{
 		ViewportSize: sdl.Point{800, 600},
